@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+#include<math.h>
+
+int main(){
+
+    float a, r, n, SumOfGeometricSeries;
+
+    printf(" Please Enter First Term of an G.P Series:  ");
+
+    scanf("%f", &a);
+
+    printf(" Please Enter the Total Terms in this G.P Series:  ");
+
+
+    scanf("%f", &n);
+
+    printf(" Please Enter the Common Ratio:  ");
+
+    scanf("%f", &r);
+
+    SumOfGeometricSeries = (a * (1 - pow(r, n))) / (1- r);
+
+    printf("\n The Sum of Geometric Progression Series = %f", SumOfGeometricSeries);
+
+    return 0;
+}
