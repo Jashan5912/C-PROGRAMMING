@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fib(int);// function declare
+
+int main()
+{
+    int m;
+
+    printf("\n Enter the total number of terms till you want Fibonaaci Series: ");
+
+    scanf("%d", &m);
+
+    printf("\n 0 1");
+
+    fib(m - 2); //function calling
+
+}
+
+int fib(int m){ //defining function
+
+    static int T1 = 0, T2 = 1, T3; // T stands for term, T3 is the next term
+
+    if (m > 0){
+
+        T3 = T1 + T2;
+
+        T1 = T2; // swapping places of terms to get the last term on the place of the preceding one
+
+        T2 = T3;
+
+        printf(" %d", T3);
+
+        fib(m - 1);
+    }
+    return 0;
+
+}
