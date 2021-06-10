@@ -1,0 +1,22 @@
+// Tower of Hanoi
+#include <stdio.h>
+#include <conio.h>
+void TowerOfHanoi(int, char, char, char);
+int main()
+{
+    int e;
+    printf("\n \n Enter the number of disks : ");
+    scanf("%d",&e);
+    printf("\n");
+    TowerOfHanoi( e , 'A' , 'B' , 'C' );
+    return 0;
+}
+void TowerOfHanoi(int n, char Beg, char Aux, char End)
+{
+    if (n>=1){
+        TowerOfHanoi(n-1, Beg, End, Aux);
+        printf("%d Disk move %c to %c \n", n, Beg, End);
+        TowerOfHanoi(n-1, Aux, Beg, End);
+    }
+
+}
