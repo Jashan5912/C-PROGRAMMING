@@ -4,11 +4,11 @@
 void TowerOfHanoi(int, char, char, char);
 int main()
 {
-    int e;
+    int n;
     printf("\n \n Enter the number of disks : ");
-    scanf("%d",&e);
+    scanf("%d",&n);
     printf("\n");
-    TowerOfHanoi( e , 'A' , 'B' , 'C' );
+    TowerOfHanoi( n , 'A' , 'B' , 'C' );
     return 0;
 }
 void TowerOfHanoi(int n, char Beg, char Aux, char End)
