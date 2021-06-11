@@ -1,6 +1,5 @@
 // Tower of Hanoi
 #include <stdio.h>
-#include <conio.h>
 void TowerOfHanoi(int, char, char, char);
 int main()
 {
