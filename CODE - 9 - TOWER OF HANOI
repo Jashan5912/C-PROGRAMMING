@@ -13,7 +13,11 @@ int main()
 }
 void TowerOfHanoi(int n, char Beg, char Aux, char End)
 {
-    if (n>=1){
+    if (n==1)
+    {
+        printf("\n Disk 1 move from %c to %c \n", Beg, Aux);
+    }
+    if (n>1){
         TowerOfHanoi(n-1, Beg, End, Aux);
         printf("%d Disk move %c to %c \n", n, Beg, End);
         TowerOfHanoi(n-1, Aux, Beg, End);
