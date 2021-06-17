@@ -1,0 +1,242 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+
+void addMatrix(void){
+    int i,j;
+    printf("\nEnter the No. of Rows");
+    scanf("%d",&i);
+    printf("\nEnter the No. of Column");
+    scanf("%d",&j);
+    int arr1[i][j];
+    int arr2[i][j];
+    printf("\n\n Enter First Matrix");
+    for (int x=0;x<i;x++)
+        for (int y=0; y<j; ++y)
+            scanf("%d", &arr1[x][y]);
+    printf("\n\n Enter Second Matrix");
+    for (int x=0;x<i;x++)
+        for (int y=0; y<j; ++y)
+            scanf("%d", &arr2[x][y]);
+    printf("The Addition of these two Matrices is---->>\n\n\n");
+    for (int x=0;x<i;x++)
+    {
+        for (int y=0; y<j; ++y){
+            printf("%d", (arr2[x][y]+arr1[x][y]));
+            printf("\t");
+        }
+        printf("\n");
+    }
+}
+void subMatrix(void){
+    int i,j;
+    printf("\nEnter the No. of Rows");
+    scanf("%d",&i);
+    printf("\nEnter the No. of Column");
+    scanf("%d",&j);
+    int arr1[i][j];
+    int arr2[i][j];
+    printf("\n\n Enter First Matrix");
+    for (int x=0;x<i;x++)
+        for (int y=0; y<j; ++y)
+            scanf("%d", &arr1[x][y]);
+    printf("\n\n Enter Second Matrix");
+    for (int x=0;x<i;x++)
+        for (int y=0; y<j; ++y)
+            scanf("%d", &arr2[x][y]);
+    printf("The Subtraction of these two Matrices is---->>\n\n\n");
+    for (int x=0;x<i;x++)
+    {
+        for (int y=0; y<j; ++y){
+            printf("%d", (arr2[x][y]-arr1[x][y]));
+            printf("\t");
+        }
+        printf("\n");
+    }
+}
+
+void upTriangle(void)
+{
+    printf("TRIANGLE CAN BE ONLY IN SQUARE MATRIX");
+    int n;
+    printf("\nEnter the No. of Column");
+    scanf("%d",&n);
+    int arr[n][n];
+    for (int x=0;x<n;x++)
+        for (int y=0; y<n; ++y)
+            scanf("%d", &arr[x][y]);
+    printf("The Upper Triangle of the Matrices is---->>\n\n\n");
+    for (int x=0;x<n;x++)
+    {
+        for (int y=0; y<n; ++y)
+        {
+                if(x<=y)
+                {
+                    printf("%d",arr[x][y]);
+                    printf("\t");
+
+                }
+                else
+                    printf("\t");
+        }
+        printf("\n");
+    }
+    printf("The lower Triangle of the Matrices is---->>\n\n\n");
+    for (int x=0;x<n;x++)
+    {
+        for (int y=0; y<n; ++y)
+        {
+                if(x>=y)
+                {
+                    printf("%d",arr[x][y]);
+                    printf("\t");
+
+                }
+        }
+        printf("\n");
+    }
+
+}
+
+void transpose(void){
+    int i,j;
+    printf("\nEnter the No. of Rows");
+    scanf("%d",&i);
+    printf("\nEnter the No. of Column");
+    scanf("%d",&j);
+    int arr[i][j];
+    for (int x=0;x<i;x++)
+        for (int y=0; y<j; ++y)
+            scanf("%d", &arr[x][y]);
+
+    printf("\n\nThe  Matrices is---->>\n\n\n");
+    for (int x=0;x<i;x++)
+    {
+        for (int y=0; y<j; ++y){
+            printf("%d", arr[x][y]);
+            printf("\t");
+        }
+        printf("\n");
+    }
+    printf("The Transpose of Matrices is---->>\n\n\n");
+    for (int x=0;x<i;x++)
+    {
+        for (int y=0; y<j; ++y){
+            printf("%d", arr[y][x]);
+            printf("\t");
+        }
+        printf("\n");
+    }
+}
+
+void prodmatrix(void){
+    printf("Concept Behind Multiple of two matrices \n ---> The column of first matrix should be equal to the Rows of the second matrix\t");
+    int i,j;
+    int m,n;
+    printf("\nEnter the No. of Rows for first matrix");
+    scanf("%d",&i);
+    printf("\nEnter the No. of Column for first matrix");
+    scanf("%d",&j);
+    printf("\nEnter the No. of Rows for second matrix");
+    scanf("%d",&m);
+    printf("\nEnter the No. of Column for second matrix");
+    scanf("%d",&n);
+
+    if (j==m)
+    {
+        int arr1[i][j];
+        int arr2[m][n];
+        int final[i][n];
+        printf("\n\n Enter First Matrix");
+        for (int x=0;x<i;x++)
+            for (int y=0; y<j; ++y)
+                scanf("%d", &arr1[x][y]);
+        printf("\n\n Enter Second Matrix");
+        for (int x=0;x<m;x++)
+            for (int y=0; y<n; ++y)
+                scanf("%d", &arr2[x][y]);
+
+        printf("\n\nThe  Matrices 1st is---->>\n\n\n");
+        for (int x=0;x<i;x++)
+        {
+            for (int y=0; y<j; ++y){
+                printf("%d", arr1[x][y]);
+                printf("\t");
+            }
+            printf("\n");
+        }
+
+        printf("\n\nThe  Matrices 2nd is---->>\n\n\n");
+        for (int x=0;x<i;x++)
+        {
+            for (int y=0; y<j; ++y){
+                printf("%d", arr2[x][y]);
+                printf("\t");
+            }
+            printf("\n");
+        }
+
+        printf("The product of these two Matrices is---->>\n\n\n");
+        for (int x=0;x<i;x++)
+            for (int y=0; y<n; ++y)
+            {
+                final[x][y] = 0 ;
+                for (int z=0; z<j; ++z)
+                    final[x][y] += final[x][y] + arr1[x][z]*arr2[z][y];
+            }
+        printf("\n\nThe  Matrices is---->>\n\n\n");
+        for (int x=0;x<i;x++)
+        {
+            for (int y=0; y<n; ++y){
+                printf("%d", final[x][y]);
+                printf("\t");
+            }
+            printf("\n");
+        }
+    }
+    else
+        printf("Matrix Multiplication not possible");
+
+
+}
+
+int main() {
+    int check = 0;
+    while (&free){
+        printf("\n\n CHOSE ONE OF THE FOLLOWING-----> \n");
+        printf("\n\t 1. Addition of two matrices: PRESS '1'");
+        printf("\n\t 2. Subtraction of two matrices: PRESS '2'");
+        printf("\n\t 3. Finding upper and lower triangular matrices: PRESS '3'");
+        printf("\n\t 4. Transpose of matrix: PRESS '4'");
+        printf("\n\t 5. Product of two matrices: PRESS '5'");
+        printf("\n\t 6. Exit: PRESS '6'");
+        printf("\n\t Please Choose\n\t---->  ");
+        scanf("%d",&check);
+        switch (check) {
+            case 1:
+                addMatrix();
+                break;
+
+            case 2:
+                subMatrix();
+                break;
+
+            case 3:
+                upTriangle();
+                break;
+            case 4:
+                transpose();
+                break;
+            case 5:
+                prodmatrix();
+                break;
+            case 6:
+                exit(0);
+
+            default:
+                printf("Wrong Input Please Try Again");
+                break;
+        }
+    }
+    return (0);
+}
